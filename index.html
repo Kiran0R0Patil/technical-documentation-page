@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Final Year Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Thermal analysis of a rack mountable unit to study the conjugate heat transfer using Solid Works</header>
+      <ul>
+        <li><a class="nav-link" href="#Abstract">Abstract</a></li>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Design_Inputs">Design Inputs</a></li>
+        <li><a class="nav-link" href="#Constraints">Constraints</a></li>
+        <li>
+          <a class="nav-link" href="#Thermal_Analysis_of_Electronic_Enclosure"
+            >Thermal Analysis of Electronic Enclosure</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Results_and_Summary">Results and Summary</a></li>
+        <li><a class="nav-link" href="#Conclusion">Conclusion</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <!-- ----------- abstract----------------- -->
+      <section class="main-section" id="Abstract">
+        <header>Abstract</header>
+        <article>
+          <p>
+            When an electronic component is powered, heat will be developed which will in turn increases the component
+            temperature. For safe functioning of these components manufacturer specifies allowable temperature. If the
+            component temperature exceeds these limits component fails. To get rid of this situation heat dissipation
+            mechanism must be effective. Thermal design of an enclosure for PCBs of a rack mountable unit is taken up in
+            this work.
+          </p>
+          <p>
+            The primary objective is to enhance the heat dissipation rate with the proposed enclosure in free and forced
+            convection environment. Selection of fan and estimation of cooling rate is also done. As part of the work
+            junction temperature is estimated using commercial Solid Works software package. After validation process
+            maximum component temperature is obtained in order to ascertain the cooling effectiveness of the proposed
+            thermal design by ensuring that maximum temperature is within the prescribed limits.
+          </p>
+          <p>
+            The selection of a cabinet, enclosure or other packaging for an electronic product presents the designer or
+            system integrator with a variety of choices, in addition to certain criteria that will be dictated by the
+            nature of the application.
+          </p>
+        </article>
+      </section>
+      <!-- ----------- Introduction----------------- -->
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+            The effect of the heat developed is, raising the temperature of the component mounted on PCB. Each component
+            will have allowable temperature specified by the manufacturer crossing which will result into either
+            malfunctioning of the component or permanent failure of the component. As the total reliability of the
+            electronic enclosure is highly dictated by the component, a cooling mechanism is essentially required for an
+            electronic enclosure. Compared to other modes of heat transfer, forced convection means will provide faster
+            cooling rates.
+          </p>
+          <p>
+            This work deals with designing a cooling scheme for an electronic enclosure of a Rack Mountable Unit in free
+            convection environment as well as in forced convection environment.In the whole exercise estimation of
+            junction temperature is a tedious task as standard literature mentions about standard geometries like plate,
+            cylinder etc., but not for this kind of complex geometries like enclosures with PCBs.
+          </p>
+          <p>
+            An analytical method is established during this work in which an expression for junction temperature is
+            used. This expression will be validated with that of evaluated using commercial SOLID WORKS software
+            package.The solid model of the electronic enclosure in assembled configuration is shown in Fig. 1 and 2.
+          </p>
+          <code>
+            <figure>
+              <img src="https://i.postimg.cc/Bb63r1Gn/1-closed-enclosure.png" alt="image of closed enclosure" />
+            </figure>
+            <figure>
+              <img
+                src="https://i.postimg.cc/zX2wYmTz/2-open-view-of-the-components.png"
+                alt="image of open view of the components"
+              />
+            </figure>
+          </code>
+        </article>
+      </section>
+      <!-- ----------- design inputs----------------- -->
+      <section class="main-section" id="Design_Inputs">
+        <header>Design Inputs</header>
+        <article>
+          <ul>
+            <li>Number pf PCB’s = 2</li>
+            <li>Air Inlet Temperature = Ambient Temperature</li>
+            <li>Heat Load</li>
+          </ul>
+          <table>
+            <tr>
+              <th>ELEMENT</th>
+              <th>LOAD/HEAT(watts)</th>
+            </tr>
+            <tr>
+              <td>TSSOP</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>BGA 11,BGA 13</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>QFN</td>
+              <td>0.5</td>
+            </tr>
+            <tr>
+              <td>BGA 27</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>SOP</td>
+              <td>0.5</td>
+            </tr>
+            <tr>
+              <td>TQFP</td>
+              <td>1.5</td>
+            </tr>
+          </table>
+        </article>
+      </section>
+      <!-- ----------- constraints----------------- -->
+      <section class="main-section" id="Constraints">
+        <header>Constraints</header>
+        <article>
+          <ul>
+            <li>Analysis Type – Internal</li>
+            <li>Gravity - Along Z direction (-9.81 m/s<sup>2</sup>)</li>
+            <li>Project Fluid - Laminar and Turbulant</li>
+            <li>Project Solid - Aluminium 6061</li>
+            <li>Wall Condition - Adiabatic Wall</li>
+            <li>Pressure - 101325Pa</li>
+            <li>Velocity - 0 m/s (all the directions)</li>
+            <li>Initial Solid Temperature - 30&deg;C</li>
+            <li>Relatve Humidity - 40%</li>
+            <li>Reference Temperature – 300&deg;C</li>
+          </ul>
+        </article>
+      </section>
+      <!-- ----------- Thermal Analysis of Electronic Enclosure----------------- -->
+      <section class="main-section" id="Thermal_Analysis_of_Electronic_Enclosure">
+        <header>Thermal Analysis of Electronic Enclosure</header>
+        <article>
+          <p>
+            For appropriate analysis the given model cannot be used for flow analysis, in order to perform the analysis,
+            the given model needs to be an enclosed one. Hence the model is optimized. The enclosure consists of four
+            panels. Front, Rear, Left and Right. The front panel is inserted with vent holes and the rear panel is
+            inserted with an exhaust fan and is optimized as said before and is shown in fig.3.
+          </p>
+          <code>
+            <figure>
+              <img
+                src="https://i.postimg.cc/qMWtGp83/3-enclosure-with-vent-holes-and-exhaust-fan.png"
+                alt="image of enclosure with vent holes and exhaust fan"
+              />
+            </figure>
+          </code>
+          The properties of the exhaust fan used is mentioned below
+          <table>
+            <tr>
+              <td>Property</td>
+              <td>Value</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>PMD1238PKBX-A (2) (Pre-defined)</td>
+            </tr>
+            <tr>
+              <td>Fan Type</td>
+              <td>Axial</td>
+            </tr>
+            <tr>
+              <td>Reference density</td>
+              <td>1.2 kg/m<sup>3</sup></td>
+            </tr>
+            <tr>
+              <td>Mass/Volume flow rate</td>
+              <td>Volume flow rate</td>
+            </tr>
+            <tr>
+              <td>Rotor speed</td>
+              <td>1570.7964 rad/s</td>
+            </tr>
+            <tr>
+              <td>Outer diameter</td>
+              <td>0.037999 m</td>
+            </tr>
+            <tr>
+              <td>Direction of rotation</td>
+              <td>Clockwise</td>
+            </tr>
+          </table>
+          <p>
+            Further in order to specify the external conditions or the environment it is placed in, the enclosure is
+            kept in a fluid sub-domain with the specified constraints. Fig.4 shows the enclosure inside the fluid
+            sub-domain.
+          </p>
+          <code>
+            <figure>
+              <img
+                src="https://i.postimg.cc/DyQZ11yt/4-enclosure-inside-the-fluid-sub-domain.png"
+                alt="image of enclosure inside the fluid sub-domain"
+              />
+            </figure>
+          </code>
+          <p>
+            The next part of the analysis is to mesh the model. Finite Element Method reduces the degrees of freedom
+            from infinite to finite with the help of discretization or meshing (nodes and elements). One of the purposes
+            of meshing is to actually make the problem solvable using Finite Element.
+          </p>
+          <code>
+            <figure>
+              <img src="https://i.postimg.cc/QCQXkrsp/5-meshed-model.png" alt="meshed model" />
+            </figure>
+          </code>
+          <p>
+            The meshed model is then run through the analysis with the required constraints and the surface plot is
+            obtained with the amount of heat dissipated from the individual components in the unit.
+          </p>
+          <code>
+            <figure>
+              <img src="https://i.postimg.cc/yYnKVjNY/6-surface-plot.png" alt="image of Surface Plot" />
+            </figure>
+          </code>
+          Figure.7. represents the floe trajectory of air flowing through the unit and also the heat carried by it.
+          <code>
+            <figure>
+              <img src="https://i.postimg.cc/rpR2NLNK/7-flow-trajectory.png" alt=" image of flow trajectory run" />
+            </figure>
+          </code>
+          <p>
+            After analysis we found out the maximum temperature is 110.13℃ as shown in the above figure. This also shows
+            the heat dissipation throughout the PCB. <br />
+            Further the two graphs indicate the maximum amount of heat carried out by the solid and fluid after certain
+            number of iterations and hence gives an idea about as to enhance or further modify the model.
+          </p>
+          <code>
+            <figure>
+              <img
+                src="https://i.postimg.cc/PxKyLCvZ/8-max-temp-fluid.png"
+                alt="graphical plot of maximum temperature of fluid"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://i.postimg.cc/kXRNC1sW/9-max-temp-solid.png"
+                alt="graphical plot of maximum temperature of Solid"
+              />
+            </figure>
+          </code>
+        </article>
+      </section>
+      <!-- ----------- Results and Summary----------------- -->
+      <section class="main-section" id="Results_and_Summary">
+        <header>Results and Summary</header>
+        <article>
+          Maximum solid temperature in degree Celsius (&deg;C) for all the different configurations with both Aluminium
+          enclosure and Magnesium enclosure is as following
+          <table>
+            <tr>
+              <th>Configuration Properties</th>
+              <th>Aluminium</th>
+              <th>Magnesium</th>
+            </tr>
+            <tr>
+              <td>Closed enclosure</td>
+              <td>131.68</td>
+              <td>131.21</td>
+            </tr>
+            <tr>
+              <td>Enclosure with Vent holes</td>
+              <td>118.62</td>
+              <td>118.96</td>
+            </tr>
+            <tr>
+              <td>Enclosure with exhaust fan</td>
+              <td>110.13</td>
+              <td>111.03</td>
+            </tr>
+            <tr>
+              <td>Enclosure with heat sink</td>
+              <td>89.09</td>
+              <td>84.09</td>
+            </tr>
+          </table>
+        </article>
+      </section>
+      <!-- ----------- Conclusion----------------- -->
+      <section class="main-section" id="Conclusion">
+        <header>Conclusion</header>
+        <article>
+          <p>
+            As mentioned earlier the specified maximum temperature for the safe functioning of the rack mountable unit
+            is 120&deg;C.From the analysis we can see that the maximum amount of heat is dissipated by using heat sink
+            ie., the thermal pad along with vent holes and exhaust fan. But practically it is not possible due to the
+            increase in power consumption and also makes the model more complicated. Hence we conclude that it is best
+            suited to use the enclosure with vent holes as it ensures the required amount of heat dissipation to keep
+            the unit safe.
+          </p>
+          <p>
+            From the analysis on using alternative material that is magnesium we find that there is a bit more heat lost
+            but not much difference when compared with aluminium. When the two materials are compared with respect to
+            other properties aluminium has better heat conductivity and better machinability and has a thermal
+            conductivity of 205 W/mK whereas magnesium has lower weight density and is brittle in nature with a thermal
+            conductivity of 156 W/mK. Hence we conclude that Aluminium is best suited for the manufacturing of the RACK
+            MOUNTABLE UNIT.
+          </p>
+        </article>
+      </section>
+      <!-- ----------- Reference----------------- -->
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ol>
+            <li>
+              P Rada, P bowler et al. Proceedings of the ASME 2011 Pacific Rim Technical Conference & Exposition on
+              Packaging and Integration of Electronic and Photonic Systems InterPACK2011 July 6-8, 2011, Portland, USA.
+            </li>
+            <li>KunLi, Lianfa Yang et al. Advanced Materials Research Online: 2012-06-14</li>
+            <li>B.Raja et al. Int. Journal of Engineering Research and ApplicationsNovember 2015.</li>
+            <li>
+              Anjaiah Madarapu, Murali Mohan Raju.T et al. IOSR Journal of Mechanical and Civil Engineering (2012)
+            </li>
+          </ol>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
