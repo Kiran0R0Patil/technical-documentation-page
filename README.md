@@ -1,6 +1,7 @@
 # technical-documentation-page
 
-my mechanical final year project documentation
+my mechanical final year project documentation.
+view the page : https://kiran0r0patil.github.io/my-first-repo-tribute-page/
 
 A freeCodeCamp.org project to complete the Responsive Web Design course.
 
