@@ -3,7 +3,7 @@
 ### My mechanical final year project documentation.
 [View Deployment](https://kiran0r0patil.github.io/technical-documentation-page/)
 
-___
+---
 
 A *freeCodeCamp.org* project to complete the Responsive Web Design course.
 
